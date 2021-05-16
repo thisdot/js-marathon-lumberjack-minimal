@@ -1,16 +1,7 @@
 import { NgModule } from '@angular/core';
-import { LumberjackComponent } from './lumberjack.component';
-
-
 
 @NgModule({
-  declarations: [
-    LumberjackComponent
-  ],
-  imports: [
-  ],
-  exports: [
-    LumberjackComponent
-  ]
+  imports: [],
+  exports: [],
 })
-export class LumberjackModule { }
+export class LumberjackModule {}
