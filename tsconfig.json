@@ -10,6 +10,10 @@
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
     "paths": {
+      "http-plugin": [
+        "dist/http-plugin/http-plugin",
+        "dist/http-plugin"
+      ],
       "lumberjack": [
         "dist/lumberjack/lumberjack",
         "dist/lumberjack"

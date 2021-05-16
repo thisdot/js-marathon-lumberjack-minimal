@@ -131,6 +131,37 @@
           }
         }
       }
+    },
+    "http-plugin": {
+      "projectType": "library",
+      "root": "projects/http-plugin",
+      "sourceRoot": "projects/http-plugin/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/http-plugin/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/http-plugin/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/http-plugin/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/http-plugin/src/test.ts",
+            "tsConfig": "projects/http-plugin/tsconfig.spec.json",
+            "karmaConfig": "projects/http-plugin/karma.conf.js"
+          }
+        }
+      }
     }
   },
   "defaultProject": "lumberjack-demo"
