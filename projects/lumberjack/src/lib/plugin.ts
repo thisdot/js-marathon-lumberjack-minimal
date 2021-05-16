@@ -1,4 +1,4 @@
-export interface Plugin {
+export interface SystemPlugin {
   logInfo(message: string): void;
   logDebug(message: string): void;
   logError(message: string): void;
