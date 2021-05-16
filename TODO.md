@@ -1,6 +1,6 @@
 # Todo
 
-- [ ] Plugin Contract
+- [x] Plugin Contract
 - [ ] Plugin Injection Token
 - [ ] Orchestration Service
 - [ ] Plugin configuration
