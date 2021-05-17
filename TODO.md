@@ -3,7 +3,7 @@
 - [x] Plugin Contract
 - [x] Plugin Injection Token
 - [x] Orchestration Service
-- [ ] Plugin configuration
+- [x] Plugin configuration
 - [ ] Plugin configuration token
 - [ ] Core configuration
 - [ ] Core configuration token
