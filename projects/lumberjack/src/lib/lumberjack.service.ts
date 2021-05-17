@@ -16,29 +16,36 @@ export class LumberjackService {
   }
 
   log(message: string, level: LogLevel): void {
-    switch (level) {
-      case 'info':
-        this.plugins.forEach((plugin) => plugin.logInfo(message));
-        break;
-      case 'debug':
-        this.plugins.forEach((plugin) => plugin.logDebug(message));
-        break;
-      case 'error':
-        this.plugins.forEach((plugin) => plugin.logError(message));
-        break;
-      case 'critical':
-        this.plugins.forEach((plugin) => plugin.logCritical(message));
-        break;
-      case 'warning':
-        this.plugins.forEach((plugin) => plugin.logWarning(message));
-        break;
-      case 'trace':
-        this.plugins.forEach((plugin) => plugin.logTrace(message));
-        break;
+    this.plugins.forEach((plugin) => {
+      if (this.canLog(plugin, level)) {
+        switch (level) {
+          case 'info':
+            plugin.logInfo(message);
+            break;
+          case 'debug':
+            plugin.logDebug(message);
+            break;
+          case 'error':
+            plugin.logError(message);
+            break;
+          case 'critical':
+            plugin.logCritical(message);
+            break;
+          case 'warning':
+            plugin.logWarning(message);
+            break;
+          case 'trace':
+            plugin.logTrace(message);
+            break;
 
-      default:
-        throw new Error('Unsupported level: ' + level);
-        break;
-    }
+          default:
+            throw new Error('Unsupported level: ' + level);
+        }
+      }
+    });
+  }
+
+  canLog(plugin: SystemPlugin, logLevel: LogLevel): boolean {
+    return plugin.config.levels.includes(logLevel);
   }
 }
