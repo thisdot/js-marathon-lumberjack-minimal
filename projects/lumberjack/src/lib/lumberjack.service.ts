@@ -21,7 +21,8 @@ export class LumberjackService {
   }
 
   log(message: string, level: LogLevel): void {
-    const format = this.config.format.bind(this);
+    const format = this.config.format;
+
     this.plugins.forEach((plugin) => {
       if (this.canLog(plugin, level)) {
         switch (level) {
