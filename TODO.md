@@ -4,6 +4,6 @@
 - [x] Plugin Injection Token
 - [x] Orchestration Service
 - [x] Plugin configuration
-- [ ] Plugin configuration token
-- [ ] Core configuration
-- [ ] Core configuration token
+- [x] Plugin configuration token
+- [x] Core configuration
+- [x] Core configuration token
